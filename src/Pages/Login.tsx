@@ -1,8 +1,44 @@
+import { useState } from "react";
+
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Logging in with:", { email, password });
+    // Here you can add API call for login
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-full">
-      <h2 className="text-2xl font-bold mb-4">Login Page</h2>
-      <p className="text-gray-600">Here will be the login form.</p>
+    <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-md">
+      <h2 className="text-2xl font-bold text-center mb-6 text-blue-600">
+        Login
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 }
