@@ -1,6 +1,9 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import axios from "axios"; // 👈 install this in frontend (npm install axios)
+=======
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
 
 function Register() {
   const [name, setName] = useState("");
@@ -8,6 +11,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+<<<<<<< HEAD
   const [success, setSuccess] = useState("");
 
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
@@ -27,12 +31,19 @@ function Register() {
       setError("Password must be at least 6 characters!");
       return;
     }
+=======
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
 
     setError("");
+<<<<<<< HEAD
     try {
       const response = await axios.post("http://localhost:5000/register", {
         name,
@@ -48,6 +59,10 @@ function Register() {
     } catch (err: any) {
       setError(err.response?.data?.message || "Registration failed!");
     }
+=======
+    console.log("Registering:", { name, email, password });
+    // API call for registration here
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
   };
 
   return (
@@ -62,6 +77,10 @@ function Register() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
+=======
+          required
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
         />
         <input
           type="email"
@@ -69,6 +88,10 @@ function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
+=======
+          required
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
         />
         <input
           type="password"
@@ -76,6 +99,10 @@ function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
+=======
+          required
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
         />
         <input
           type="password"
@@ -83,10 +110,17 @@ function Register() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
         />
 
         {error && <p className="text-red-600 text-sm">{error}</p>}
         {success && <p className="text-green-600 text-sm">{success}</p>}
+=======
+          required
+        />
+
+        {error && <p className="text-red-600 text-sm">{error}</p>}
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
 
         <button
           type="submit"
@@ -95,6 +129,7 @@ function Register() {
           Register
         </button>
       </form>
+<<<<<<< HEAD
 
       <p className="text-center text-sm mt-4">
         Already have an account?{" "}
@@ -102,6 +137,8 @@ function Register() {
           Login
         </Link>
       </p>
+=======
+>>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
     </div>
   );
 }
