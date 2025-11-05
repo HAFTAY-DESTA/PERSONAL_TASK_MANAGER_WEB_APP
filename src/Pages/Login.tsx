@@ -1,14 +1,10 @@
 import { useState } from "react";
-<<<<<<< HEAD
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-=======
->>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-<<<<<<< HEAD
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -25,10 +21,7 @@ function Login() {
 
       if (response.status === 200) {
         // ✅ Store logged-in user in localStorage
-        localStorage.setItem(
-          "loggedInUser",
-          JSON.stringify({ email })
-        );
+        localStorage.setItem("loggedInUser", JSON.stringify({ email }));
 
         // ✅ Redirect to inner dashboard
         navigate("/dashboard");
@@ -40,17 +33,10 @@ function Login() {
         setError("Server error. Please try again later.");
       }
     }
-=======
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Logging in with:", { email, password });
-    // Here you can add API call for login
->>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-md">
+    <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-md mt-10">
       <h2 className="text-2xl font-bold text-center mb-6 text-blue-600">
         Login
       </h2>
@@ -71,12 +57,9 @@ function Login() {
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
         />
-<<<<<<< HEAD
 
         {error && <p className="text-red-600 text-sm">{error}</p>}
 
-=======
->>>>>>> c259fdf90f51f6a355f06a8622f71b9cf9343e7d
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
